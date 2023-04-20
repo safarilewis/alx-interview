@@ -3,7 +3,7 @@
 from typing import List
 
 
-def validUTF8(data: List[int]):
+def validUTF8(data: List[int]) -> bool:
     '''Checks numbers in data and returns True if all are valid utf8'''
     count = 0
     for num in data:
