@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 '''Checks if a number is a valid utf8 encoding'''
-from typing import List
 
 
-def validUTF8(data: List[int]) -> bool:
+def validUTF8(data) -> bool:
     '''Checks numbers in data and returns True if all are valid utf8'''
     count = 0
     for num in data:
