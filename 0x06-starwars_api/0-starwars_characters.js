@@ -1,32 +1,28 @@
-#!/usr/bin/node
+#!/usr/bin/node3
 const request = require('request');
-const URI = 'https://swapi-api.hbtn.io/api/films';
-const ID = process.argv[2];
-const params = {
-    url: URI + ID,
-    method: 'GET'
-};
+const URI = `https://swapi-api.hbtn.io/api/films/${process.argv[2]}`;
 
-request(params, function(error,_,body){
-    if(error) {
-        console.log('Failed, please try again!');
+
+request(URI, function(error,_,body){
+    if(!error) {
+        const charactersURI = JSON.parse(body).characters;
+        getCharacters(charactersURI, 0)
     }
     else {
-        const characters = JSON.parse(body).characters;
-        getCharacters(characters, 0)
+        console.error(error)
     }
 });
 
 function getCharacters(character, id) {
     request(character[id], function(error,_,body) {
-        if (error) {
-            console.log("Getting characters failed!");
-        }
-        else {
+        if (!error) {
             console.log(JSON.parse(body).name);
             if (id + 1 < character.length) {
                 getCharacters(character, id + 1);
             }
-        }
+        else {
+            console.error(error);
+            }
+         }
     })
 }
