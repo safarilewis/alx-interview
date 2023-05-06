@@ -2,7 +2,6 @@
 const request = require('request');
 const URI = `https://swapi-api.hbtn.io/api/films/${process.argv[2]}`;
 
-
 request(URI, function (error, _, body) {
   if (!error) {
     const charactersURI = JSON.parse(body).characters;
