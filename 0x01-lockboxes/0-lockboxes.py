@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-from typing import List
 """
 You are given a list of lists named boxes.
 Each box is numbered sequentially from 0 to n - 1
@@ -9,5 +8,5 @@ A key with the same number as a box opens that box
 """
 
 
-def canUnlockAll(boxes: List[List]) -> bool:
+def canUnlockAll(boxes) -> bool:
     pass
