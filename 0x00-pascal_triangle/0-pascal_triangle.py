@@ -12,4 +12,4 @@ def pascal_triangle(n):
                    row[j] or 1 for j in range(0, i)]
         row = new_row
         tri += [new_row]
-    return tri[]
+    return tri
