@@ -12,7 +12,7 @@ A key with the same number as a box opens that box
 def canUnlockAll(boxes) -> bool:
     '''Function that checks if all boxes can be opened'''
     check = 1
-    position = 1
+    position = 0
     keys = []
     for box in boxes:
         for item in box:
