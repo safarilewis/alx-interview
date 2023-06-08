@@ -17,12 +17,5 @@ def canUnlockAll(boxes) -> bool:
     for box in boxes:
         for item in box:
             keys.append(item)
-    while position < len(boxes):
-        if len(boxes) == 1:
-            value = True
-        for key in keys:
-            if key == position:
-                value = True
-                position = position + 1
-            else: value = False
+            
     return value
