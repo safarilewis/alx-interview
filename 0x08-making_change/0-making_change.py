@@ -8,11 +8,6 @@ def makeChange(coins, total):
         return 0
     if coins == [] or coins is None:
         return -1
-    for x in coins:
-        if x > total:
-            coins.pop(x)
-        elif x == total:
-            return 1
     coins_count = 0
     coin_id = 0
     sorted_coins = sorted(coins, reverse=True)
@@ -24,5 +19,3 @@ def makeChange(coins, total):
         else:
             coin_id += 1
     return coins_count
-
-            
