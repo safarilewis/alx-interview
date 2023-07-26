@@ -1,15 +1,20 @@
 #!/usr/bin/python3
-"""Pascal's Triangle"""
+'''Pascal's triangle.
+'''
 
 
 def pascal_triangle(n):
-    '''Returns a list of ints representing pascal's triangle'''
-    for i in range(0, n + 1):
-        row = []
-        tri = []
-        new_row = []
-        new_row = [j > 0 and j < i - 1 and i > 2 and row[j-1] +
-                   row[j] or 1 for j in range(0, i)]
-        row = new_row
-        tri += [new_row]
+    '''Draws Pascal's Triangle
+    '''
+    tri = []
+    if type(n) is not int or n <= 0:
+        return tri
+    for i in range(n):
+        line = []
+        for j in range(i + 1):
+            if j == 0 or j == i:
+                line.append(1)
+            elif i > 0 and j > 0:
+                line.append(tri[i - 1][j - 1] + tri[i - 1][j])
+        tri.append(line)
     return tri
